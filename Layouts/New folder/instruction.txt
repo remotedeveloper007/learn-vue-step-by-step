@@ -1,0 +1,13 @@
+npx serve
+
+
+npm install json-server --save-dev
+
+//to runn json db
+npx json-server db.json -p 3001
+
+
+#Using Fetch API with Promises
+The Fetch API returns a promise, which is a way to handle asynchronous operations.
+
+A promise is an object representing the eventual completion or failure of an asynchronous operation. It is a promise to provide a result in the future.

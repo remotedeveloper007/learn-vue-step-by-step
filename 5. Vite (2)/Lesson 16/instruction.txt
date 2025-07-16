@@ -1,0 +1,50 @@
+// To configer and install vue srom scratch
+
+$ npm init vue@latest
+Need to install the following packages:
+create-vue@3.17.0
+Ok to proceed? (y) Y
+
+
+> npx
+> create-vue
+
+┌  Vue.js - The Progressive JavaScript Framework
+│
+◇  Project name (target directory):
+│  my-first-vue-project
+│
+◇  Select features to include in your project: (↑/↓ to navigate, space to select, a to toggle all, enter to confirm)
+│  Router (SPA development), ESLint (error prevention), Prettier (code formatting)
+│
+◇  Select experimental features to include in your project: (↑/↓ to navigate, space to select, a to toggle all, enter to confirm)
+│  none
+
+Scaffolding project in C:\Users\Mazhar\Desktop\CSS, JS & React Tuts\Vue3 Tut-Laracast\5. Vite (2)\Lesson 16\my-first-vue-project...
+│
+└  Done. Now run:
+
+   cd my-first-vue-project
+   npm install
+   npm run format
+   npm run dev
+
+| Optional: Initialize Git in your project directory with:
+
+   git init && git add -A && git commit -m "initial commit"
+
+//…or create a new repository on the command line
+echo "# learn-vue-step-by-step" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/remotedeveloper007/learn-vue-step-by-step.git
+git push -u origin main
+
+// …or push an existing repository from the command line
+git remote add origin https://github.com/remotedeveloper007/learn-vue-step-by-step.git
+git branch -M main
+git push -u origin main
+
+

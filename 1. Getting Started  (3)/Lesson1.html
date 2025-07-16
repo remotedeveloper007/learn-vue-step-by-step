@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Vue Absolute Basic</title>
+    <!-- <script src="https://unpkg.com/vue@3.2.33/dist/vue.global.js"></script> -->
+    <script src="https://unpkg.com/vue@3.5.16/dist/vue.global.js"></script>
+
+      
+</head>
+<body>
+    <div id="app">
+        <p>
+            <input type="text" v-model="greeting"/>
+        </p>
+        {{ greeting }} ({{greeting.length}})
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    greeting: 'Hello World!'
+                };
+            },
+
+            mounted() {
+                // alert('Hello!');
+                setTimeout(() => {
+                    // alert('Hello!');
+                    
+                    // it'll update the greeting and rerender dom automatically after 3 seconds.
+                    this.greeting = 'Changed';
+                }, 3000);
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your First Custom Vue Component</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style></style>
+</head>
+<body class="h-full grid place-items-center">
+
+    <div id="app">
+        <add-button>Submit</add-button> <br/><br/>
+
+        <add-button>Click Me</add-button>
+    </div>
+
+    <script>
+        let app = {
+            components: {
+                'add-button': {
+                    template: `
+                        <button class="bg-gray-200 hover:bg-gray-400 rounded px-5 py-2 disabled:cursor-not-allowed" :disabled="processing">
+                            <slot/>
+                        </button>
+                    `,
+
+                    data() {
+                        return {
+                            processing: false
+                        }
+                    }
+
+                    // mounted() {
+                    //     alert('Hello World!');
+                    // }
+                }
+            }
+        }
+
+        Vue.createApp(app).mount('#app');
+    </script>
+</body>
+</html>

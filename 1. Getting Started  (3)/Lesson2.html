@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Attribute Binding & Event Handling</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display:grid;
+            place-items:center;
+        }
+
+        button {
+            text-transform:uppercase;
+        }
+
+        .text-red {
+            color:red;
+        }
+
+        .text-green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <!-- NOTE: first way Here instead on using (v-bind:calss), we can use short hand like (:class)-->
+        <!-- <button :class="buttonClasses" v-on:click="toggle">Click Me</button> -->
+
+        <!-- NOTE: second way Also instead on using (v-on:click), we can use short hand like (@click) here -->
+        <button :class="active ? 'text-red' : 'text-green'" @click="toggle">Click Me</button>
+    </div>
+
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    buttonClasses: 'text-green',
+                    active: false,
+                }
+            },
+
+            methods: {
+                toggle() {
+                    // alert('Toggle!');
+                    // first way
+                    // this.buttonClasses = 'text-red';
+
+                    //second way
+                    this.active = ! this.active;
+                }
+
+
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

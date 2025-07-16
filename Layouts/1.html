@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta 
+    name="viewport" 
+    content="width=device-width, initial-scale=1.0" 
+  />
+  <title>Apple style Bento Grid (Mobile first)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+
+        :root {
+            --card-radius: 1.25rem;
+            --gap: 1rem;
+            --shadow: 
+                0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        * { 
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+            background: #10002b;
+        }
+
+        .grid {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            max-height: 75rem;
+            grid-template-columns: 1fr;
+            grid-auto-rows: minmax(12rem, auto);
+            gap: var(--gap);
+            grid-template-areas:
+                "cent"
+                "perf"
+                "memo"
+                "thun"
+                "cpu20"
+                "gpu30"
+                "tran"
+                "cpu12"
+                "gpu38"
+                "neur"
+                "band"
+                "medi"
+                "tech";
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--card-radius);
+        }
+
+        .thun  { grid-area: thun; }
+        .cpu20 { grid-area: cpu20; }
+        .gpu30 { grid-area: gpu30; }
+        .perf  { grid-area: perf;  }
+        .memo  { grid-area: memo;  }
+        .tran  { grid-area: tran;  }
+        .cent  { grid-area: cent;  }
+        .cpu12 { grid-area: cpu12; }
+        .gpu38 { grid-area: gpu38; }
+        .neur  { grid-area: neur;  }
+        .band  { grid-area: band;  }
+        .medi  { grid-area: medi;  }
+        .tech  { grid-area: tech;  }
+
+        @media (min-width: 480px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas:
+                "cent  cent"
+                "perf  perf"
+                "memo  memo"
+                "thun  thun"
+                "cpu20 gpu30"
+                "tran  tran"
+                "cpu12 gpu38"
+                "neur  neur"
+                "band  band"
+                "medi  medi"
+                "tech  tech";
+            }
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-areas:
+                "thun cpu20 gpu30 memo"
+                "perf perf  perf  perf"
+                "tran tran  cent  cent"
+                "cpu12 gpu38 cent  cent"
+                "neur neur  band  band"
+                "medi medi  tech  tech";
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .grid {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-areas:
+                "thun cpu20 gpu30 perf  perf  memo"
+                "tran tran  cent  cent  cpu12 gpu38"
+                "neur neur  cent  cent  cpu12 gpu38"
+                "neur neur  cent  cent  band  band"
+                "medi medi  tech  tech  band  band";
+            }
+        }
+
+        .thun, .cpu20, .gpu30, .perf, .memo {
+            background: #c77dff;
+        }
+
+        .tran, .cent {
+            background: #9d4edd;
+        }
+
+        .cpu12, .gpu38, .neur {
+            background: #c77dff;
+        }
+
+        .band, .medi, .tech {
+            background: #e0aaff;
+        }
+        
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="card thun"></div>
+    <div class="card cpu20"></div>
+    <div class="card gpu30"></div>
+    <div class="card perf"></div>
+    <div class="card memo"></div>
+    <div class="card tran"></div>
+    <div class="card cent"></div>
+    <div class="card cpu12"></div>
+    <div class="card gpu38"></div>
+    <div class="card neur"></div>
+    <div class="card band"></div>
+    <div class="card medi"></div>
+    <div class="card tech"></div>
+  </div>
+</body>
+</html>
